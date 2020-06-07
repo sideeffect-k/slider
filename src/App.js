@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import ProtectedRoute from './Compoents/ProtectedRoute';
 import NotFound from './Pages/NotFound';
 import Login from './Pages/Login';
+import Hello from './Pages/Hello';
 import './App.less';
 
 
@@ -12,7 +14,13 @@ function App() {
         <Switch>
           <Route
             path={'/'}
+            exact={true}
             component={Login}
+          />
+          <ProtectedRoute
+            path={'/protected'}
+            exact={true}
+            component={Hello}
           />
           <Route
             path="*"
