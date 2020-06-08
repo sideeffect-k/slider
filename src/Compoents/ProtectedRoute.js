@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import NotFound from '../Pages/NotFound';
 
 const ProtectedRoute = (props) => {
-  const {component, authenticated, ...rest} = props;
+  const {component: Component, authenticated, ...rest} = props;
   console.log('authenticated', authenticated);
   return (
     <Route
@@ -12,7 +12,7 @@ const ProtectedRoute = (props) => {
       render={
         (_props) => {
           if (authenticated) {
-            return <component {..._props} />;
+            return <Component {..._props} />;
           }
           return <NotFound />;
         }

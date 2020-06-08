@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ProtectedRoute from './Compoents/ProtectedRoute';
 import NotFound from './Pages/NotFound';
-import Login from './Pages/Login';
+import Login from './Pages/Login/index';
 import Hello from './Pages/Hello';
 import './App.less';
 
@@ -18,7 +18,7 @@ function App() {
             component={Login}
           />
           <ProtectedRoute
-            path={'/protected'}
+            path={'/main'}
             exact={true}
             component={Hello}
           />
